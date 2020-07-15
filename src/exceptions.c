@@ -131,6 +131,8 @@ void php_parallel_exceptions_save(zval *saved, zend_object *exception) {
 
     /* todo */
     ZVAL_NULL(&previous);
+    // try patch PARALLEL_ZVAL_COPY segfault
+    ZVAL_NULL(trace);
 
     ZVAL_STR(&class, exception->ce->name);
 
